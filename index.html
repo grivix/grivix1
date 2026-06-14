@@ -3,257 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grivix | Next-Gen Charging Solutions</title>
+    <title>TravelMantra | Premium Cab & Tour Services</title>
     <style>
-        /* --- Modern & Minimalist Style Rules --- */
+        /* --- Base Setup --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #0b0f19; /* Deep tech dark background */
-            color: #f3f4f6;
+            background-color: #f9fafb;
+            color: #1f2937;
             line-height: 1.6;
         }
 
-        /* Header Navigation */
+        /* --- Header Navigation --- */
         header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background-color: rgba(11, 15, 25, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .logo {
+        .brand-logo {
             font-size: 24px;
             font-weight: 800;
-            letter-spacing: 1.5px;
-            color: #00ffcc; /* Vibrant, technical accent color */
+            color: #1e3a8a; /* Deep Trust Blue */
         }
 
-        .nav-links a {
-            color: #9ca3af;
+        .brand-logo span {
+            color: #eab308; /* Vibrant Yellow Accent */
+        }
+
+        .contact-btn {
+            background-color: #1e3a8a;
+            color: white;
             text-decoration: none;
-            margin-left: 20px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
             font-size: 14px;
-            transition: color 0.3s;
+            transition: background 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #00ffcc;
+        .contact-btn:hover {
+            background-color: #1d4ed8;
         }
 
-        /* Main Hero Section */
-        .hero {
+        /* --- Hero Container Layout --- */
+        .hero-section {
+            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.95)), url('https://images.unsplash.com/photo-1494783367193-14bc9b48283c?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .hero-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 140px 5% 60px 5%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-            background: linear-gradient(to right, #ffffff, #9ca3af);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #9ca3af;
-            max-width: 600px;
-            margin-bottom: 40px;
-        }
-
-        /* --- THE AUTOMATIC IMAGE SLIDER --- */
-        .slider-container {
-            width: 100%;
-            max-width: 450px; /* Perfect sizing for product presentation */
-            position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            background: #111827;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            margin-bottom: 40px;
-        }
-
-        .slider-wrapper {
-            display: flex;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .slide {
-            width: 100%;
-            flex-shrink: 0;
-            display: block;
-            object-fit: cover;
-            aspect-ratio: 1 / 1; /* Keeps images perfectly square */
-        }
-
-        /* High Impact Call-to-Action Button */
-        .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            background-color: #00ffcc;
-            color: #0b0f19;
-            text-decoration: none;
-            padding: 16px 32px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 30px;
-            letter-spacing: 0.5px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 10px 20px rgba(0, 255, 204, 0.2);
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 25px rgba(0, 255, 204, 0.4);
-        }
-
-        /* Product Features Grid */
-        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            width: 100%;
-            max-width: 1000px;
-            margin-top: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
         }
 
-        .feature-card {
-            background: #111827;
+        @media (max-width: 768px) {
+            .hero-container { grid-template-columns: 1fr; }
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: #eab308;
+        }
+
+        /* --- Right-Side Booking Form Box --- */
+        .booking-box {
+            background: #ffffff;
             padding: 30px;
             border-radius: 12px;
-            text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            transition: border 0.3s;
+            color: #1f2937;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .feature-card:hover {
-            border: 1px solid rgba(0, 255, 204, 0.3);
+        .booking-box h3 {
+            margin-bottom: 20px;
+            color: #1e3a8a;
+            font-size: 20px;
+            border-bottom: 2px solid #f3f4f6;
+            padding-bottom: 10px;
         }
 
-        .feature-card h3 {
-            font-size: 18px;
-            color: #ffffff;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .form-group {
+            margin-bottom: 15px;
         }
 
-        .feature-card h3::before {
-            content: "✓";
-            color: #00ffcc;
-            font-weight: bold;
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #4b5563;
         }
 
-        .feature-card p {
-            color: #9ca3af;
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
             font-size: 14px;
         }
 
-        /* Footer Section */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #4b5563;
-            font-size: 13px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 80px;
+        .submit-btn {
+            width: 100%;
+            background-color: #eab308;
+            color: #1f2937;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
-        /* Smooth adjustments for smaller mobile screens */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1rem; }
+        .submit-btn:hover {
+            background-color: #ca8a04;
+        }
+
+        /* --- Fleet Grid Section --- */
+        .fleet-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #1e3a8a;
+            margin-bottom: 40px;
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .fleet-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e5e7eb;
+        }
+
+        .fleet-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e5e7eb;
+        }
+
+        .fleet-info {
+            padding: 20px;
+        }
+
+        .fleet-info h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+
+        .fleet-info p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-booking-btn {
+            display: block;
+            text-align: center;
+            background-color: #25d366; /* Official WhatsApp Green */
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .whatsapp-booking-btn:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
-        <div class="logo">GRIVIX</div>
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="https://wa.me/919993459309" target="_blank">Contact</a>
-        </nav>
+        <div class="nav-container">
+            <div class="brand-logo">TRAVEL<span>MANTRA</span></div>
+            <a href="tel:+919876543210" class="contact-btn">Call: +91 98765-43210</a>
+        </div>
     </header>
 
-    <section class="hero" id="home">
-        <h1>Next-Gen Power. Delivered.</h1>
-        <p>Experience ultra-fast, intelligent charging built for your heavy-duty daily routine. Engineered to be compact, safe, and resilient.</p>
-
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <img src="charger1.jpg" class="slide" alt="Grivix Charger Main View">
-                <img src="charger2.jpg" class="slide" alt="Grivix Charger Angle View">
-                <img src="charger3.jpg" class="slide" alt="Grivix Charger Box Packaging">
+    <!-- Hero Section with Booking Engine Visual -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Your Perfect Travel Partner For <span>Intercity Rides</span></h1>
+                <p>Reliable, sanitised, and prompt cab services across India. Book an outstation tour or a local airport drop instantly at best competitive rates.</p>
             </div>
-        </div>
-
-        <a href="https://wa.me/919993459309?text=Hi%20Grivix,%20I%20am%20interested%20in%20your%20charger." class="btn-whatsapp" target="_blank">
-            Order via WhatsApp
-        </a>
-
-        <div class="features-grid" id="features">
-            <div class="feature-card">
-                <h3>Intelligent Fast Charging</h3>
-                <p>Engineered with cutting-edge protocols to deliver the maximum optimal speed safely to your specific devices.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Multi-Layer Protection</h3>
-                <p>Built-in safeguards protect your expensive electronics against over-current, overheating, and short circuits.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Premium Compact Build</h3>
-                <p>A minimalist, highly durable structure designed to fit perfectly into your travel kit or wall socket without clutter.</p>
+            
+            <!-- Booking Box Form Structure -->
+            <div class="booking-box">
+                <h3>Quick Cab Booking</h3>
+                <form id="cabForm">
+                    <div class="form-group">
+                        <label>Pickup Location</label>
+                        <input type="text" id="pickup" placeholder="e.g. Indore" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Drop Location</label>
+                        <input type="text" id="drop" placeholder="e.g. Ujjain" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Vehicle Category</label>
+                        <select id="carType">
+                            <option value="Sedan">经济 Sedan (Dzire / Etios)</option>
+                            <option value="SUV">舒适 SUV (Ertiga / Innova)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Check Availability</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Grivix. All rights reserved.</p>
-    </footer>
+    <!-- Fleet Pricing Section -->
+    <section class="fleet-section">
+        <h2 class="section-title">Our Fleet Operations</h2>
+        <div class="fleet-grid">
+            
+            <!-- Car Card 1 -->
+            <div class="fleet-card">
+                <div class="fleet-img" style="display: flex; align-items: center; justify-content: center; font-weight: bold; color: #9ca3af;">[ Sedan Image Space ]</div>
+                <div class="fleet-info">
+                    <h4>Premium Sedan Fleet</h4>
+                    <p>Perfect for small families or corporate business trips. Holds up to 4 passengers plus clean trunk luggage space.</p>
+                    <a href="https://wa.me/919876543210?text=I%20want%20to%20book%20a%20Sedan" class="whatsapp-booking-btn" target="_blank">Book Sedan via WhatsApp</a>
+                </div>
+            </div>
 
+            <!-- Car Card 2 -->
+            <div class="fleet-card">
+                <div class="fleet-img" style="display: flex; align-items: center; justify-content: center; font-weight: bold; color: #9ca3af;">[ SUV Image Space ]</div>
+                <div class="fleet-info">
+                    <h4>Family Executive SUV</h4>
+                    <p>Ideal choice for longer highway routes and large family group tours. Extra legroom and heavy overhead carrier options.</p>
+                    <a href="https://wa.me/919876543210?text=I%20want%20to%20book%20an%20SUV" class="whatsapp-booking-btn" target="_blank">Book SUV via WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Functional Form-to-WhatsApp redirection engine script -->
     <script>
-        const wrapper = document.querySelector('.slider-wrapper');
-        const slides = document.querySelectorAll('.slide');
-        
-        let currentIndex = 0;
-        const totalSlides = slides.length;
-
-        function nextSlide() {
-            currentIndex++;
-            if (currentIndex >= totalSlides) {
-                currentIndex = 0;
-            }
-            wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-
-        // Shifts automatically every 3.5 seconds
-        setInterval(nextSlide, 3500);
+        document.getElementById('cabForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Capture inputs safely
+            const pickup = encodeURIComponent(document.getElementById('pickup').value);
+            const drop = encodeURIComponent(document.getElementById('drop').value);
+            const car = encodeURIComponent(document.getElementById('carType').value);
+            
+            // Format dynamic custom message text
+            const whatsappMessage = `Hi TravelMantra, I want to check availability for a cab route.%0A*From:* ${pickup}%0A*To:* ${drop}%0A*Vehicle Selected:* ${car}`;
+            
+            // Redirect the user's browser straight to WhatsApp API string link
+            window.open(`https://wa.me/919876543210?text=${whatsappMessage}`, '_blank');
+        });
     </script>
 
 </body>
 </html>
- 
